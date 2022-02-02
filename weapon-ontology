@@ -1,0 +1,268 @@
+@prefix owl:  <http://www.w3.org/2002/07/owl#> .
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd:  <http://www.w3.org/2001/XMLSchema#> .
+
+<urn:soap/weapon/ontology#Rocket>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Rocket> , <urn:soap/weapon/ontology#Ammunition> .
+
+<urn:soap/weapon/ontology#ElasticWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#ElasticWeapon> , <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#SiegeWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#SiegeWeapon> , <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#Arrow>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Arrow> , <urn:soap/weapon/ontology#Ammunition> .
+
+<urn:soap/weapon/ontology#FireArm>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#FireArm> , <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#FireWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#LargeColdWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#LargeColdWeapon> , <urn:soap/weapon/ontology#Weapon> , <urn:soap/weapon/ontology#ColdWeapon> .
+
+<urn:soap/weapon/ontology#Weapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#FireWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#FireWeapon> , <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#SmallColdWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#SmallColdWeapon> , <urn:soap/weapon/ontology#Weapon> , <urn:soap/weapon/ontology#ColdWeapon> .
+
+<urn:soap/weapon/ontology#ColdWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#ColdWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#Artillery>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Artillery> .
+
+<urn:soap/weapon/ontology#RocketArtillery>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#RocketArtillery> , <urn:soap/weapon/ontology#Artillery> .
+
+<urn:soap/weapon/ontology#Ammunition>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Ammunition> .
+
+<urn:soap/weapon/ontology#RangeWeapon>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#Gun>
+        rdf:type         owl:Class ;
+        rdfs:subClassOf  <urn:soap/weapon/ontology#Gun> , <urn:soap/weapon/ontology#RangeWeapon> , <urn:soap/weapon/ontology#FireWeapon> , <urn:soap/weapon/ontology#Weapon> .
+
+<urn:soap/weapon/ontology#useAmmunition>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#RocketArtillery> ;
+        rdfs:range   <urn:soap/weapon/ontology#Rocket> .
+
+<urn:soap/weapon/ontology#range>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#SiegeWeapon> ;
+        rdfs:range   xsd:int .
+
+<urn:soap/weapon/ontology#length>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#ColdWeapon> ;
+        rdfs:range   xsd:float .
+
+<urn:soap/weapon/ontology#bow>
+        rdf:type                        <urn:soap/weapon/ontology#ElasticWeapon> ;
+        <urn:soap/weapon/ontology#rateOfFire>
+                "18rpm" ;
+        <urn:soap/weapon/ontology#use>  <urn:soap/weapon/ontology#bowArrow> .
+
+<bolt>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<breechloader>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<52>    rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#colt>
+        rdf:type  <urn:soap/weapon/ontology#FireArm> ;
+        <urn:soap/weapon/ontology#numberOfAmmunition>
+                "7" ;
+        <urn:soap/weapon/ontology#typeOfReloading>
+                "revolver" .
+
+<204>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#hasCaliber>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#FireWeapon> ;
+        rdfs:range   <urn:soap/weapon/ontology#Caliber> .
+
+<urn:soap/weapon/ontology#Size>
+        rdf:type  owl:Class .
+
+<.40>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<311>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#V2>
+        rdf:type  <urn:soap/weapon/ontology#Rocket> .
+
+<urn:soap/weapon/ontology#arrowSize>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#Arrow> ;
+        rdfs:range   xsd:float .
+
+<urn:soap/weapon/ontology#bowArrow>
+        rdf:type  <urn:soap/weapon/ontology#Arrow> ;
+        <urn:soap/weapon/ontology#arrowSize>
+                "70" .
+
+<revolver>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<urn:soap/weapon/ontology#catapult>
+        rdf:type  <urn:soap/weapon/ontology#SiegeWeapon> ;
+        <urn:soap/weapon/ontology#range>
+                "400" ;
+        <urn:soap/weapon/ontology#throwingPower>
+                "90" .
+
+<urn:soap/weapon/ontology#hasGuns>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#Artillery> ;
+        rdfs:range   <urn:soap/weapon/ontology#Gun> .
+
+<urn:soap/weapon/ontology#rangeInKm>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#Gun> ;
+        rdfs:range   xsd:int .
+
+<urn:soap/weapon/ontology#knife>
+        rdf:type  <urn:soap/weapon/ontology#SmallColdWeapon> ;
+        <urn:soap/weapon/ontology#length>
+                "5" .
+
+<urn:soap/weapon/ontology#hasGunCrew>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#Artillery> ;
+        rdfs:range   <urn:soap/weapon/ontology#Soldier> .
+
+<semi-automatic>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<172>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#tribuchet>
+        rdf:type  <urn:soap/weapon/ontology#SiegeWeapon> ;
+        <urn:soap/weapon/ontology#range>
+                "640" ;
+        <urn:soap/weapon/ontology#throwingPower>
+                "160" .
+
+<urn:soap/weapon/ontology#katana>
+        rdf:type  <urn:soap/weapon/ontology#LargeColdWeapon> ;
+        <urn:soap/weapon/ontology#length>
+                "70" .
+
+<muzzleloader>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<urn:soap/weapon/ontology#M270>
+        rdf:type  <urn:soap/weapon/ontology#RocketArtillery> ;
+        <urn:soap/weapon/ontology#useAmmunition>
+                <urn:soap/weapon/ontology#V2> .
+
+<urn:soap/weapon/ontology#Mechanism>
+        rdf:type  owl:Class .
+
+<urn:soap/weapon/ontology#crossbow>
+        rdf:type                        <urn:soap/weapon/ontology#ElasticWeapon> ;
+        <urn:soap/weapon/ontology#rateOfFire>
+                "8rpm" ;
+        <urn:soap/weapon/ontology#use>  <urn:soap/weapon/ontology#crossbowArrow> .
+
+<urn:soap/weapon/ontology#battery>
+        rdf:type  <urn:soap/weapon/ontology#Artillery> ;
+        <urn:soap/weapon/ontology#hasGunCrew>
+                <urn:soap/weapon/ontology#John> ;
+        <urn:soap/weapon/ontology#hasGuns>
+                <urn:soap/weapon/ontology#M198howitzer> .
+
+<urn:soap/weapon/ontology#glock>
+        rdf:type  <urn:soap/weapon/ontology#FireArm> ;
+        <urn:soap/weapon/ontology#hasCaliber>
+                ".45" , ".40" ;
+        <urn:soap/weapon/ontology#numberOfAmmunition>
+                "7" ;
+        <urn:soap/weapon/ontology#typeOfReloading>
+                "revolver" .
+
+<urn:soap/weapon/ontology#John>
+        rdf:type  <urn:soap/weapon/ontology#Soldier> .
+
+<284>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#Soldier>
+        rdf:type  owl:Class .
+
+<urn:soap/weapon/ontology#M198howitzer>
+        rdf:type  <urn:soap/weapon/ontology#Gun> ;
+        <urn:soap/weapon/ontology#hasCaliber>
+                "52" ;
+        <urn:soap/weapon/ontology#rangeInKm>
+                "30" .
+
+<urn:soap/weapon/ontology#typeOfReloading>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#FireArm> ;
+        rdfs:range   <urn:soap/weapon/ontology#Reloading> .
+
+<urn:soap/weapon/ontology#Caliber>
+        rdf:type   owl:Class ;
+        owl:oneOf  ( <172> <20> <204> <284> <52> <311> <.40> <.50> ) .
+
+<urn:soap/weapon/ontology#crossbowArrow>
+        rdf:type  <urn:soap/weapon/ontology#Arrow> ;
+        <urn:soap/weapon/ontology#arrowSize>
+                "45" .
+
+<fully-automatic>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<urn:soap/weapon/ontology#throwingPower>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#SiegeWeapon> ;
+        rdfs:range   xsd:int .
+
+<urn:soap/weapon/ontology#use>
+        rdf:type     owl:ObjectProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#ElasticWeapon> ;
+        rdfs:range   <urn:soap/weapon/ontology#Arrow> .
+
+<urn:soap/weapon/ontology#Reloading>
+        rdf:type   owl:Class ;
+        owl:oneOf  ( <muzzleloader> <breechloader> <bolt> <pump> <revolver> <semi-automatic> <fully-automatic> ) .
+
+<urn:soap/weapon/ontology#numberOfAmmunition>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#FireArm> ;
+        rdfs:range   xsd:int .
+
+<urn:soap/weapon/ontology#rateOfFire>
+        rdf:type     owl:DatatypeProperty ;
+        rdfs:domain  <urn:soap/weapon/ontology#ElasticWeapon> ;
+        rdfs:range   xsd:string .
+
+<pump>  rdf:type  <urn:soap/weapon/ontology#Mechanism> .
+
+<.50>   rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<20>    rdf:type  <urn:soap/weapon/ontology#Size> .
+
+<urn:soap/weapon/ontology#dagger>
+        rdf:type  <urn:soap/weapon/ontology#SmallColdWeapon> ;
+        <urn:soap/weapon/ontology#length>
+                "10" .
